@@ -1,0 +1,2 @@
+Make a start page where the player choses an image, the number of pieces, 
+wether or not you can rotate the pieces, 
