@@ -1,2 +1,23 @@
-Make a start page where the player choses an image, the number of pieces, 
-wether or not you can rotate the pieces, 
+Make a start page where the player choses an image, the number of pieces, wether or not you can 
+rotate the pieces. 
+
+It then opens a new screen with the a jumbled pile of pieces. 
+
+Buttons at the top: 
+ - Button to space them out around the puzzle board. 
+ - Button to only view edges. 
+ - Button to toggle finished image overlay. 
+ - Button to bring up image. 
+
+The user can drag each piece with left mouse drag. When pressing on a piece it rotates clock wise. 
+
+When dragging a peace to its neighbour they connect and act like one island. Movements, rotations 
+are performed for the entire island. 
+
+Piece behaviour: 
+ - rotation
+ - Movement
+ - neighbour checks
+
+
+
