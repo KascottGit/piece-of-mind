@@ -30,3 +30,11 @@ Piece behaviour:
  - rotation
  - Movement
  - neighbour checks
+
+
+
+ To do: 
+ - add image viewer for selected image. 
+ - Make dropdown for piece count
+ - Make use rotation as a const
+ - 
