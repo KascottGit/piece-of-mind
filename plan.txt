@@ -1,7 +1,19 @@
-Make a start page where the player choses an image, the number of pieces, wether or not you can 
-rotate the pieces. 
+Main Menu       ~ Main page
+    New Game        - opens New Game
+    Continue        - opens the file explorer, letting the player open a .puzzle file. 
 
-It then opens a new screen with the a jumbled pile of pieces. 
+New Game        ~ Page where the user configures the puzzle
+    Select Image    - opens the file explorer, letting the player open an image used as the puzzle. 
+    Size            - dropdown where the player choses roughly how many pieces
+    Use Rotation    - toggles if rotation is used in the puzzle. '
+    Play            - opens Game Window
+
+Game Window     ~ The actual puzzle board
+    Save Game
+    Main Menu
+
+
+There is also a button "play game" It opens a new screen with the a jumbled pile of pieces. 
 
 Buttons at the top: 
  - Button to space them out around the puzzle board. 
@@ -18,6 +30,3 @@ Piece behaviour:
  - rotation
  - Movement
  - neighbour checks
-
-
-
