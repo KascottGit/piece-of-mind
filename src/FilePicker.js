@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 /**
  * A custom file picker button component.
- *
+ * 
  * @param {object} props
  * @param {string} props.accept - The file types to accept (e.g., "image/*", ".pdf").
  * @param {function} props.onFileChange - Callback function when a file is selected.
