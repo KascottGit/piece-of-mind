@@ -12,7 +12,6 @@ Game Window     ~ The actual puzzle board
     Save Game
     Main Menu
 
-
 There is also a button "play game" It opens a new screen with the a jumbled pile of pieces. 
 
 Buttons at the top: 
@@ -31,10 +30,7 @@ Piece behaviour:
  - Movement
  - neighbour checks
 
-
-
  To do: 
  - add image viewer for selected image. 
  - Make dropdown for piece count
  - Make use rotation as a const
- - 

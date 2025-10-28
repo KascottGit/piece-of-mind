@@ -4,25 +4,33 @@ import FilePicker from './FilePicker';
 import './App.css';
 
 function App() {
-  const [gameState, setGameState] = useState('menu');// 'menu', 'newGame', 'playing', 'solved'
+  const [gameState, setGameState] = useState('test');// 'menu', 'newGame', 'playing', 'solved'
 
   function newGame() {
     setGameState('newGame');
   }
   function startGame() {
-    setGameState('playing');
+    setGameState('game');
   }
-  function continueGame() {
+  function continueGame(file) {
+    startGame();
     //open file browser to load saved game
+  }
+  function loadImage(file) {
+    //load image for new game
   }
 
 
   const renderGameState = () => {
     switch (gameState) {
       case 'menu':
-        return <MainMenu newGame={newGame} />;
+        return <MainMenu newGame={newGame} continueGame={continueGame} />;
       case 'newGame':
-        return <NewGame />;
+        return <NewGame startGame={startGame} loadImage={loadImage} />;
+      case 'game':
+        return <Game />;
+      case 'test':
+        return <Test />;
       default:
         return null;
     }
@@ -34,45 +42,69 @@ function App() {
     </div>
   );
 }
-const handleFileSelected = (file) => {
-  console.log('File selected by user:', file);
-  //setSelectedFile(file);
-};
 
-function MainMenu({ newGame }) {
+function MainMenu({ newGame, continueGame }) {
   return (
-    <div className="Mid-Box">
-      <button onClick={newGame} className='Button'>
+    <div className="Menu-Container">
+      <button onClick={newGame}>
         New Game
       </button>
-      <FilePicker accept="image/*" onFileChange={handleFileSelected}>
+      <FilePicker accept=".puzzle" onFileChange={continueGame}>
         Open Saved Game
       </FilePicker>
     </div>
   );
 };
 
-function NewGame() {
+function NewGame({ startGame, loadImage }) {
   return (
-    <div className="Mid-Box">
-      <button>
+    <div className="Menu-Container">
+      <button onClick={startGame}>
         Start Game
       </button>
       <div className="Horizontal-Group">
-        <button className='Button'>
+        <button>
           Size
         </button>
-        <button className='Button'>
+        <button>
           Use Rotation
         </button>
       </div>
-      <FilePicker accept="image/*" onFileChange={handleFileSelected}>
+      <FilePicker accept="image/*" onFileChange={loadImage}>
         Load Puzzle Image
       </FilePicker>
       <div className='Image-Box'>
-        
+        Puzzle Preview
       </div>
     </div>
+  );
+}
+
+function Game() {
+  return (
+    <div className="Puzzle-Container">
+      Game Component
+    </div>
+  );
+}
+
+function Test() {
+  return (
+    <>
+      <div className='Menu-Button-Group'>
+        <button className="Menu-Button">Save</button>
+        <button className="Menu-Button">Load Game</button>
+        <button className="Menu-Button">New Game</button>
+      </div>
+      <div className='Puzzle-Container'>
+        
+      </div>
+      <div className='Menu-Button-Group'>
+        <button className="Menu-Button">Tidy Up</button>
+        <button className="Menu-Button">Edges Only</button>
+        <button className="Menu-Button">Hint</button>
+      </div>
+    </>
   );
 }
 

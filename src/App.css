@@ -9,10 +9,22 @@
   color: white;
 }
 
-.Mid-Box {
+.Menu-Container {
   background-color: #3E4451;
   height: 70vh;
   width: 70vh;
+  display: flex;
+  flex-direction: column-reverse;
+  box-sizing: border-box;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 40px;
+}
+
+.Puzzle-Container {
+  background-color: #3E4451;
+  height: 80vh;
+  width: 80vh;
   display: flex;
   flex-direction: column-reverse;
   box-sizing: border-box;
@@ -38,17 +50,36 @@
   gap: 20px;
 }
 
-.Mid-Box, button, .Image-Box {
-  box-shadow: 
-    2px 4px 10px rgba(0, 0, 0, 0.25), 
-    inset -2px -4px 4px rgba(0, 0, 0, 0.5), 
+.Menu-Button-Group {
+  width: 90vw;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 10vh;
+  box-sizing: border-box;
+
+  gap: 50px;
+}
+
+.Menu-Container,
+.Image-Box,
+.Puzzle-Container {
+  box-shadow:
+    2px 4px 10px rgba(0, 0, 0, 0.25),
+    /* Cast Shadow */
+    inset -2px -4px 4px rgba(0, 0, 0, 0.5),
+    /* Bevel Shadow */
     inset 2px 4px 4px rgba(255, 255, 255, 0.25);
+  /* Bevel Highlight */
+  transition: all 0.2s ease;
 }
 
 .FilePickerButton {
   width: stretch;
 }
 
+/*
 button {
   background-color: #545D6E;
   width: stretch;
@@ -58,21 +89,54 @@ button {
   color: white;
   font-size: 4vh;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease-in-out;
 }
 button:hover {
   box-shadow: 
     0px 4px 10px 2px rgba(0, 0, 0, 0.5), 
     inset -2px -4px 4px rgba(0, 0, 0, 0.5), 
     inset 2px 4px 4px rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-  transition: all 0.2s ease;
+  transform: translateY(-4px); 
+  transition: all 0.2s ease-in-out;
 }
 button:active{
   box-shadow: 
-    2px 4px 10px rgba(0, 0, 0, 0.25), 
-    inset -2px -4px 4px rgba(0, 0, 0, 0.5), 
-    inset 2px 4px 4px rgba(255, 255, 255, 0.25);
+    2px 4px 4px rgba(255, 255, 255, 0.25), 
+    -2px -4px 4px rgba(0, 0, 0, 0.5), 
+    inset -2px -4px 4px rgba(0, 0, 0, 0.0), 
+    inset 2px 4px 4px rgba(0, 0, 0, 0.5);
   transform: translateY(4px);
+  transition: all 0.2s ease-in-out;
+}*/
+
+.Menu-Button {
+  background-color: transparent;
+  border: none;
+  font-size: 5vh;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  height: fit-content;
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+  transition: all .75s ease;
+}
+
+.Menu-Button:hover {
+  text-shadow: 0px 6px 10px rgba(0, 0, 0, 1);
+
+  transform: translateY(calc(-50% - 4px));
   transition: all 0.2s ease;
+}
+
+.Menu-Button:active {
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 1);
+
+  transform: translateY(calc(-50% + 2px));
+  transition: all 0.1s ease;
 }
