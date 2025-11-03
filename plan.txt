@@ -1,37 +1,55 @@
-Main Menu       ~ Main page
-    New Game        - opens New Game
-    Continue        - opens the file explorer, letting the player open a .puzzle file. 
+    Menu       ~ Visible on all pages
+Save
+- Saves a .puzzle with the URI of the image, the number of pieces, all of the pieces with their positions, 
+rotations and if they are connected to their neighbours. 
+- If the position is negative, it means that the piece is stored in the tray.
 
-New Game        ~ Page where the user configures the puzzle
-    Select Image    - opens the file explorer, letting the player open an image used as the puzzle. 
-    Size            - dropdown where the player choses roughly how many pieces
-    Use Rotation    - toggles if rotation is used in the puzzle. '
-    Play            - opens Game Window
+Load game
+- Loads the image and the number of pieces. Generates the puzzle. Based on the data stored, each piece is placed and
+rotated according to the position and rotation and connected to the each neighbour. 
+
+New Game
+- Opens new game screen
+
+    New Game        ~ Page where the user configures a new puzzle
+Select Image    
+- opens the file explorer, letting the player open an image used as the puzzle. 
+
+Size            
+- dropdown where the player choses roughly how many pieces
+
+Use Rotation    
+- toggles if rotation is used in the puzzle. 
+
+play
+- Takes image and splits into pieces masked by puzzle piece graphic. This is done in a deterministic fashion based on
+edge index etc, so that it can be reconstructed later. 
+- opens Game Window
 
 Game Window     ~ The actual puzzle board
-    Save Game
-    Main Menu
+    Tidy up         - places all single pieces on the board in the drawer
+    Toggle edges    - Hides all non edge pieces in the drawer
+    Show image      - toggles / shows the image as a backdrop / overlay
 
-There is also a button "play game" It opens a new screen with the a jumbled pile of pieces. 
 
-Buttons at the top: 
- - Button to space them out around the puzzle board. 
- - Button to only view edges. 
- - Button to toggle finished image overlay. 
- - Button to bring up image. 
+
+
+Piece behaviour
+- Each puzzle piece has an index, a position on the board, a rotation, and reference to its (maximum) 4 neighbours. 
+- Each piece when dropped does a neighbour check against its list of neighbours. If it is within a distance, they 
+connect, and move as a unit. One transformation made on one of them is copied to the other. 
+- 
+
 
 The user can drag each piece with left mouse drag. When pressing on a piece it rotates clock wise. 
 
 When dragging a peace to its neighbour they connect and act like one island. Movements, rotations 
 are performed for the entire island. 
 
-Piece behaviour: 
- - rotation
- - Movement
- - neighbour checks
-
  To do: 
  - add image viewer for selected image. 
  - Make dropdown for piece count
  - Make use rotation as a const
- - Add hint button
+ 
+ - Add hint button?
+
